@@ -23,3 +23,4 @@ spec:
       image: quay.io/redhat-pipeline-service/ci-runner:main
       script: |
         echo "write kubeconfig"
+        echo "cluster-name: $(params.cluster-name)"
