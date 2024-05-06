@@ -1,0 +1,25 @@
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: rosa-cluster-create-task
+spec:
+  params:
+    - name: version
+      description: ocp cluster version that you want to provision
+      default: "4.14"
+    - name: region
+      description: ocp cluster region where you want to provision
+      default: "us-east-1"
+    - name: cluster-name
+      default: "rhtap-qe"
+  steps:
+    - name: create-cluster
+      image: quay.io/redhat-pipeline-service/ci-runner:main
+      script: |
+        echo "create hcp cluster"
+        echo "version: $(params.version)"
+    - name: write-kubeconfig
+      image: quay.io/redhat-pipeline-service/ci-runner:main
+      script: |
+        echo "write kubeconfig"
