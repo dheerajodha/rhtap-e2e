@@ -24,3 +24,4 @@ spec:
       script: |
         echo "write kubeconfig"
         echo "cluster-name: $(params.cluster-name)"
+        echo "region: $(params.region)"
