@@ -11,6 +11,6 @@ spec:
           - name: url
             value: https://github.com/xinredhat/rhtap-e2e.git
           - name: revision
-            value: rosa_testing
+            value: test6
           - name: pathInRepo
             value: integration/deploy-cluster-task.yaml
