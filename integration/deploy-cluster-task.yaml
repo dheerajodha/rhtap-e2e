@@ -21,15 +21,9 @@ spec:
         echo "version: $(params.version)"
     - name: write-kubeconfig
       image: quay.io/redhat-pipeline-service/ci-runner:main
-      env:
-        - name: var1
-          valueFrom:
-            secretKeyRef:
-              name: test
-              key: test
       script: |
         echo "write kubeconfig"
+        echo "Aaaaaaa"
         echo "cluster-name: $(params.cluster-name)"
         echo "region: $(params.region)"
-        echo "$var1"
     
